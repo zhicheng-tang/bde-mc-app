@@ -10,29 +10,30 @@ const { Text } = Typography;
 
 const columns = [
     {
-        dataIndex: 'consignorId',
+        dataIndex: 'clientId',
         title: '*客户',
         width: 100,
     },
     {
-        dataIndex: 'orderDate',
-        title: '订单日期',
-        width: 100,
-    },
-    {
-        dataIndex: 'sourceOrderNumber',
+        dataIndex: 'originNumber',
         title: '*来源单号',
         width: 100,
     },
     {
         dataIndex: 'orderType',
-        title: '*订单类型',
+        title: '订单类型',
         width: 100,
         render: OrderTypeRender,
     },
     {
-        dataIndex: 'fromWarehouseName',
-        title: '发货仓',
+        dataIndex: 'fromStoreCode',
+        title: '发货门店编码',
+        width: 120,
+        ellipsis: true,
+    },
+    {
+        dataIndex: 'fromStoreName',
+        title: '发货门店名称',
         width: 120,
         ellipsis: true,
     },
@@ -72,8 +73,14 @@ const columns = [
         ellipsis: true,
     },
     {
-        dataIndex: 'toWarehouseName',
-        title: '收货仓',
+        dataIndex: 'toStoreCode',
+        title: '收货门店编码',
+        width: 120,
+        ellipsis: true,
+    },
+    {
+        dataIndex: 'toStoreName',
+        title: '收货门店名称',
         width: 120,
         ellipsis: true,
     },
@@ -113,24 +120,14 @@ const columns = [
         ellipsis: true,
     },
     {
-        dataIndex: 'cargoDescription',
+        dataIndex: 'itemDescription',
         title: '货物描述',
         width: 100,
         ellipsis: true,
     },
     {
-        dataIndex: 'itemQuantity',
+        dataIndex: 'itemQty',
         title: '商品数量',
-        width: 100,
-    },
-    {
-        dataIndex: 'volume',
-        title: '体积',
-        width: 100,
-    },
-    {
-        dataIndex: 'weight',
-        title: '重量',
         width: 100,
     },
     {
@@ -234,7 +231,7 @@ function ImportModal() {
                     </div>
                 )}
                 bordered
-                rowKey="sourceOrderNumber"
+                rowKey="originNumber"
                 size="small"
                 tableLayout="fixed"
                 columns={columns}

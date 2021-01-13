@@ -9,12 +9,6 @@ export default [
     render: CarrierRender,
   },
   {
-    dataIndex: 'createdTime',
-    title: '发运时间',
-    width: 160,
-    fixed: true,
-  },
-  {
     dataIndex: 'consignmentNumber',
     title: '托运单号',
     width: 150,
@@ -25,6 +19,18 @@ export default [
     title: '运输状态',
     width: 90,
     render: TransportStatusRender,
+    fixed: true,
+  },
+  {
+    dataIndex: 'createdTime',
+    title: '发运时间',
+    width: 160,
+  },
+  {
+    dataIndex: 'createdBy',
+    title: '发运人',
+    width: 90,
+    ellipsis: true,
   },
   {
     dataIndex: 'lastTrackTime',
@@ -36,12 +42,6 @@ export default [
     dataIndex: 'lastTrackMessage',
     title: '最后跟踪信息',
     width: 300,
-    ellipsis: true,
-  },
-  {
-    dataIndex: 'createdBy',
-    title: '发运人',
-    width: 90,
     ellipsis: true,
   },
   {

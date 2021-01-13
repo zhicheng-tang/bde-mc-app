@@ -5,10 +5,22 @@ const { Option } = Select;
 
 const carrierOptions = [
   {
+    title: '德邦',
+    value: 'DOP',
+    color: 'default',
+    isSupportOnline: true,
+  },
+  {
+    title: '韵达',
+    value: 'YUNDA',
+    color: 'default',
+    isSupportOnline: true,
+  },
+  {
     title: '圆通',
     value: 'YTO',
     color: 'default',
-    isSupportOnline: true,
+    isSupportOnline: false,
   },
   {
     title: '百世快递',
@@ -27,18 +39,6 @@ const carrierOptions = [
     value: 'KY',
     color: 'default',
     isSupportOnline: false,
-  },
-  {
-    title: '德邦',
-    value: 'DOP',
-    color: 'default',
-    isSupportOnline: true,
-  },
-  {
-    title: '韵达',
-    value: 'YUNDA',
-    color: 'default',
-    isSupportOnline: true,
   },
   {
     title: '中通',

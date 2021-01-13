@@ -50,11 +50,22 @@ export function cancel(requestData) {
         dispatch(setState({isCanceling: true}));
 
         try {
-            const {data: {success, message}} = await axios.post('/api/consignment/cancel', requestData);
+            const {data: {success, message, content}} = await axios.post('/api/consignment/cancel', requestData);
             if (success) {
                 dispatch(setState({isCanceling: false, cancelModalVisible: false}));
                 dispatch(fetchData());
-                showSuccess(message);
+
+                const cancelFail = [];
+                content.forEach((item) => {
+                    if (!item.success) {
+                        cancelFail.push(item.consignmentNumber);
+                    }
+                });
+                if (cancelFail != null && cancelFail.length > 0) {
+                    showSuccess(cancelFail + '取消失败！');
+                } else {
+                    showSuccess('取消成功！');
+                }
             } else {
                 dispatch(setState({isCanceling: false}));
                 showError(message);

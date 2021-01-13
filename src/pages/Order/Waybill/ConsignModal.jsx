@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Modal, Form, Typography } from 'antd';
 import {
-  CarrierSelector,
+  CarrierSelector, ClientRender,
   ScheduleStatusRender,
   TransportStatusRender,
 } from 'components/form';
@@ -13,12 +13,19 @@ const { Text } = Typography;
 
 const columns = [
   {
+    dataIndex: 'clientId',
+    title: '客户',
+    width: 100,
+    fixed: 'left',
+    render: ClientRender,
+  },
+  {
     dataIndex: 'waybillNumber',
     title: '运单号',
     width: 120,
   },
   {
-    dataIndex: 'sourceOrderNumber',
+    dataIndex: 'originNumber',
     title: '来源单号',
     width: 150,
   },
@@ -27,22 +34,6 @@ const columns = [
     title: '运输状态',
     width: 80,
     render: TransportStatusRender,
-  },
-  {
-    dataIndex: 'scheduleStatus',
-    title: '调度状态',
-    width: 80,
-    render: ScheduleStatusRender,
-  },
-  {
-    dataIndex: 'shipVolume',
-    title: '发运体积',
-    width: 80,
-  },
-  {
-    dataIndex: 'shipWeight',
-    title: '发运重量',
-    width: 80,
   },
 ];
 

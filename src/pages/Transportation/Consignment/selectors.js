@@ -15,12 +15,12 @@ export function validateCancelable(items = []) {
   const result = { valid: [], invalid: [] };
 
   items.forEach((item) => {
-    if (item.status === 'CANCELED') {
+    if (item.status === 99) {
       result.invalid.push({
         ...item,
         message: '托运单已经取消，不能再次取消',
       });
-    } else if (item.status !== 'CREATED') {
+    } else if (item.status !== 0) {
       result.invalid.push({
         ...item,
         message: '托运单已经揽收或启运，不能取消',

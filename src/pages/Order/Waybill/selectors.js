@@ -15,20 +15,15 @@ export function validateCancelable(items = []) {
   const result = { valid: [], invalid: [] };
 
   items.forEach((item) => {
-    if (item.status === 'CANCELED') {
+    if (item.status === 99) {
       result.invalid.push({
         ...item,
         message: '运单已经取消，不能再次取消',
       });
-    } else if (item.status !== 'CREATED') {
+    } else if (item.status !== 0) {
       result.invalid.push({
         ...item,
         message: '运单已经揽收或启运，不能取消',
-      });
-    } else if (item.scheduleStatus !== 'UN_SCHEDULED') {
-      result.invalid.push({
-        ...item,
-        message: '运单已经发运，先取消相关的托运单再取消运单',
       });
     } else {
       result.valid.push({ ...item, message: '可以取消' });
@@ -46,25 +41,17 @@ export function validateConsignable(items = []) {
   const result = { valid: [], invalid: [] };
 
   items.forEach((item) => {
-    if (item.status === 'CANCELED') {
+    if (item.status === 99) {
       result.invalid.push({
         ...item,
         message: '运单已经取消，不能发运',
       });
-    } else if (
-      item.status === 'SIGNED' ||
-      item.status === 'ABNORMALLY_SIGNED'
-    ) {
+    } else if (item.status !== 0 ) {
       result.invalid.push({
         ...item,
-        message: '运单已经签收，不能发运',
+        message: '运单已经揽收或启运，不能发运',
       });
-    } else if (item.scheduleStatus === 'FULL_SCHEDULED') {
-      result.invalid.push({
-        ...item,
-        message: '运单已经完成调度，不能发运',
-      });
-    } else {
+    }  else {
       result.valid.push({ ...item, message: '可以发运' });
     }
   });

@@ -46,10 +46,15 @@ export function cancel(requestData) {
         dispatch(setState({isCanceling: true}));
 
         try {
-            await axios.post('/api/waybill/cancel', requestData);
-            dispatch(setState({isCanceling: false, cancelModalVisible: false}));
-            dispatch(fetchData());
-            message.success('取消运单成功！');
+            const {data: {success, message}} = await axios.post('/api/waybill/cancel', requestData);
+            if (success) {
+                dispatch(setState({isCanceling: false, cancelModalVisible: false}));
+                dispatch(fetchData());
+                showSuccess('取消成功！');
+            } else {
+                dispatch(setState({isCanceling: false}));
+                showError(message);
+            }
         } catch (ex) {
             dispatch(setState({isCanceling: false}));
             showError(ex);
@@ -62,11 +67,22 @@ export function consignExpress(requestData) {
         dispatch(setState({isConsigning: true}));
 
         try {
-            const {data: {success, message}} = await axios.post('/api/waybill/consignExpress', requestData);
+            const {data: {success, message, content}} = await axios.post('/api/consigning/consign', requestData);
             if (success) {
                 dispatch(setState({isConsigning: false, consignModalVisible: false}));
                 dispatch(fetchData());
-                showSuccess('发运成功！');
+
+                const consignFail = [];
+                content.forEach((item) => {
+                    if (!item.success) {
+                        consignFail.push(item.waybillNumber);
+                    }
+                });
+                if (consignFail != null && consignFail.length > 0) {
+                    showSuccess(consignFail + '发运失败！');
+                } else {
+                    showSuccess('发运成功！');
+                }
             } else {
                 dispatch(setState({isConsigning: false}));
                 showError(message);
