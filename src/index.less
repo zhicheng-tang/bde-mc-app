@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+form.search {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+
+  > .ant-form-item {
+    width: 25em;
+    margin-right: 1em;
+    margin-bottom: 0.6em;
+  }
+  > .form-actions {
+    margin-right: 1em;
+    margin-bottom: 0.6em;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+
+  > * {
+    margin-right: 1em;
+    margin-bottom: 0.6em;
+  }
+}
+
+.ant-table-cell .ant-form-item {
+  margin-bottom: 0;
+}
+
+.ant-descriptions-view > table th {
+  white-space: nowrap;
+}
+
+div::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+div::-webkit-scrollbar-track {
+  background: rgba(45, 45, 45, 0.1);
+  border-radius: 2px;
+}
+div::-webkit-scrollbar-thumb {
+  background: rgba(45, 45, 45, 0.3);
+  border-radius: 2px;
+}
+div::-webkit-scrollbar-thumb:hover {
+  background: rgba(45, 45, 45, 0.5);
+}
+
+div::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+div.ant-table-ping-right:not(.ant-table-has-fix-right)
+  .ant-table-container::after {
+  box-shadow: none;
+}
