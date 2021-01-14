@@ -6,7 +6,7 @@ import {useAxios} from "use-axios-client";
 
 const {TabPane} = Tabs;
 
-function WaybillDetail({waybill}) {
+function WaybillDetail({waybill={}}) {
 
     const  {data} = useAxios(
         `/api/waybill/get/${waybill.waybillNumber}`

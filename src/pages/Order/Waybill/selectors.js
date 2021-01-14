@@ -23,7 +23,7 @@ export function validateCancelable(items = []) {
     } else if (item.status !== 0) {
       result.invalid.push({
         ...item,
-        message: '运单已经揽收或启运，不能取消',
+        message: '运单已经派单，不能取消',
       });
     } else {
       result.valid.push({ ...item, message: '可以取消' });
@@ -49,7 +49,7 @@ export function validateConsignable(items = []) {
     } else if (item.status !== 0 ) {
       result.invalid.push({
         ...item,
-        message: '运单已经揽收或启运，不能发运',
+        message: '运单已经派单，不能发运',
       });
     }  else {
       result.valid.push({ ...item, message: '可以发运' });
