@@ -68,6 +68,12 @@ export default [
         ellipsis: true,
     },
     {
+        dataIndex: 'fromArea',
+        title: '发货区县',
+        width: 120,
+        ellipsis: true,
+    },
+    {
         dataIndex: 'fromAddress',
         title: '发货地址',
         width: 300,
@@ -100,6 +106,12 @@ export default [
     {
         dataIndex: 'toCity',
         title: '收货城市',
+        width: 120,
+        ellipsis: true,
+    },
+    {
+        dataIndex: 'toArea',
+        title: '收货区县',
         width: 120,
         ellipsis: true,
     },
@@ -158,6 +170,11 @@ export default [
         dataIndex: 'collectedTime',
         title: '揽收时间',
         width: 160,
+    },
+    {
+        dataIndex: 'packageQty',
+        title: '揽收件数',
+        width: 90,
     },
     {
         dataIndex: 'collectedBy',

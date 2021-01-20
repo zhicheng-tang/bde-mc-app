@@ -25,11 +25,11 @@ const orderNumberOptions = [
 ];
 
 const keywordOptions = [
-    {label: '发货仓', value: 'fromStoreName'},
+    {label: '发货门店', value: 'fromStoreName'},
     {label: '发货人', value: 'fromContactMan'},
     {label: '发货地址', value: 'fromAddress'},
     {label: '发货人电话', value: 'fromContactPhone'},
-    {label: '收货仓', value: 'toStoreName'},
+    {label: '收货门店', value: 'toStoreName'},
     {label: '收货地址', value: 'toAddress'},
     {label: '收货人', value: 'toContactMan'},
     {label: '收货人电话', value: 'toContactPhone'},
