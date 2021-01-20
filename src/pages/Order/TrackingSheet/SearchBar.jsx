@@ -21,7 +21,6 @@ const formItemColProps = {
 const orderNumberOptions = [
     {label: '运单号', value: 'waybillNumber'},
     {label: '来源单号', value: 'originNumber'},
-    {label: '托运单号', value: 'consignmentNumber'},
 ];
 
 const keywordOptions = [
@@ -56,9 +55,6 @@ function SearchBar() {
             </Form.Item>
             <Form.Item {...formItemColProps} name="orderType" label="订单类型">
                 <OrderTypeSelector/>
-            </Form.Item>
-            <Form.Item {...formItemColProps} name="carrierId" label="承运商">
-                <CarrierSelector/>
             </Form.Item>
             <Form.Item {...formItemColProps} name="fromDistrictCode" label="发货地">
                 <DistrictSelector/>
