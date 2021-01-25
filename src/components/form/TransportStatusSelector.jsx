@@ -10,7 +10,7 @@ const transportStatus = [
         color: 'default',
     },
     {
-        title: '已派单',
+        title: '待揽收',
         value: 10,
         color: 'processing',
     },
