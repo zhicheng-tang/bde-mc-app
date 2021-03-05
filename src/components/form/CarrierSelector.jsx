@@ -36,9 +36,9 @@ const carrierOptions = [
   },
   {
     title: '跨越',
-    value: 'KY',
+    value: 'KYE',
     color: 'default',
-    isSupportOnline: false,
+    isSupportOnline: true,
   },
   {
     title: '中通',

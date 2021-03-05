@@ -49,6 +49,11 @@ export default [
     width: 90,
   },
   {
+    dataIndex: 'packageWeight',
+    title: '重量',
+    width: 90,
+  },
+  {
     dataIndex: 'itemDescription',
     title: '货物描述',
     width: 120,

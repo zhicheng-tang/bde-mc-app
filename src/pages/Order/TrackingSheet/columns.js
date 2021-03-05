@@ -138,6 +138,12 @@ export default [
         ellipsis: true,
     },
     {
+        dataIndex: 'packageWeight',
+        title: '重量',
+        width: 90,
+        ellipsis: true,
+    },
+    {
         dataIndex: 'itemDescription',
         title: '货物描述',
         width: 120,

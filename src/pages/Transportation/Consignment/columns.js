@@ -15,6 +15,18 @@ export default [
         fixed: true,
     },
     {
+        dataIndex: 'logisticsProductName',
+        title: '运输方式',
+        width: 120,
+        fixed: true,
+    },
+    {
+        dataIndex: 'logisticsAccount',
+        title: '月结账号',
+        width: 120,
+        fixed: true,
+    },
+    {
         dataIndex: 'status',
         title: '运输状态',
         width: 90,
