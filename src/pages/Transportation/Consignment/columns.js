@@ -2,7 +2,7 @@ import {CarrierRender, TransportStatusRender} from '../../../components/form';
 
 export default [
     {
-        dataIndex: 'carrierId',
+        dataIndex: 'logisticsId',
         title: '承运商',
         width: 100,
         fixed: true,
@@ -15,8 +15,8 @@ export default [
         fixed: true,
     },
     {
-        dataIndex: 'logisticsProductName',
-        title: '运输方式',
+        dataIndex: 'productName',
+        title: '物流产品',
         width: 120,
         fixed: true,
     },
@@ -62,7 +62,7 @@ export default [
         width: 160,
     },
     {
-        dataIndex: 'packageQty',
+        dataIndex: 'collectedPackageQty',
         title: '揽收件数',
         width: 90,
     },

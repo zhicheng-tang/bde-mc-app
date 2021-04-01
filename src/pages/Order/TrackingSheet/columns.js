@@ -39,7 +39,7 @@ export default [
         render: OrderTypeRender,
     },
     {
-        dataIndex: 'carrierId',
+        dataIndex: 'logisticsId',
         title: '承运商',
         width: 100,
         render: CarrierRender,
@@ -138,7 +138,7 @@ export default [
         ellipsis: true,
     },
     {
-        dataIndex: 'packageWeight',
+        dataIndex: 'weight',
         title: '重量',
         width: 90,
         ellipsis: true,
@@ -178,7 +178,7 @@ export default [
         width: 160,
     },
     {
-        dataIndex: 'packageQty',
+        dataIndex: 'collectedPackageQty',
         title: '揽收件数',
         width: 90,
     },

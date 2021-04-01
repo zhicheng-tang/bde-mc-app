@@ -49,7 +49,7 @@ export default [
     width: 90,
   },
   {
-    dataIndex: 'packageWeight',
+    dataIndex: 'weight',
     title: '重量',
     width: 90,
   },
