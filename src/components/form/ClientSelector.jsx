@@ -54,6 +54,16 @@ const clientOptions = [
         value: 'JX',
         color: 'default',
     },
+    {
+        title: '胡轩',
+        value: 'HX',
+        color: 'default',
+    },
+    {
+        title: '广州网商',
+        value: 'GZWS',
+        color: 'default',
+    },
 ];
 
 export function ClientSelector(props) {
