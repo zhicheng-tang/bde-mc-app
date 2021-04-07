@@ -76,11 +76,6 @@ export default [
     width: 100,
   },
   {
-    dataIndex: 'totalAmount',
-    title: '预估运费',
-    width: 90,
-  },
-  {
     dataIndex: 'itemDescription',
     title: '货物描述',
     width: 120,
@@ -91,6 +86,26 @@ export default [
     title: '送货方式',
     width: 100,
     render: DeliveryTypeRender,
+  },
+  {
+    dataIndex: 'transportationAmount',
+    title: '预估运费',
+    width: 90,
+  },
+  {
+    dataIndex: 'insuranceAmount',
+    title: '预估保险费',
+    width: 90,
+  },
+  {
+    dataIndex: 'toUpstairsAmount',
+    title: '预估上楼费',
+    width: 90,
+  },
+  {
+    dataIndex: 'totalAmount',
+    title: '预估总运费',
+    width: 90,
   },
   {
     dataIndex: 'fromStoreName',
