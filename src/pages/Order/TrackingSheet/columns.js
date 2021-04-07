@@ -73,11 +73,6 @@ export default [
         width: 90,
     },
     {
-        dataIndex: 'requestedProductName',
-        title: '选择产品',
-        width: 100,
-    },
-    {
         dataIndex: 'itemDescription',
         title: '货物描述',
         width: 120,
@@ -88,6 +83,11 @@ export default [
         title: '送货方式',
         width: 100,
         render: DeliveryTypeRender,
+    },
+    {
+        dataIndex: 'requestedProductName',
+        title: '选择产品',
+        width: 100,
     },
     {
         dataIndex: 'transportationAmount',
@@ -108,33 +108,6 @@ export default [
         dataIndex: 'totalAmount',
         title: '预估总运费',
         width: 90,
-    },
-    {
-        dataIndex: 'consignProductName',
-        title: '发运产品',
-        width: 100,
-    },
-    {
-        dataIndex: 'consignmentNumber',
-        title: '托运单号',
-        width: 150,
-    },
-    {
-        dataIndex: 'consignTime',
-        title: '发运时间',
-        width: 160,
-    },
-    {
-        dataIndex: 'lastTrackTime',
-        title: '最后跟踪操作时间',
-        width: 160,
-        ellipsis: true,
-    },
-    {
-        dataIndex: 'lastTrackMessage',
-        title: '最后跟踪信息',
-        width: 300,
-        ellipsis: true,
     },
     {
         dataIndex: 'fromStoreName',
@@ -217,6 +190,33 @@ export default [
         dataIndex: 'toContactPhone',
         title: '收货人电话',
         width: 120,
+    },
+    {
+        dataIndex: 'consignProductName',
+        title: '发运产品',
+        width: 100,
+    },
+    {
+        dataIndex: 'consignmentNumber',
+        title: '托运单号',
+        width: 150,
+    },
+    {
+        dataIndex: 'consignTime',
+        title: '发运时间',
+        width: 160,
+    },
+    {
+        dataIndex: 'lastTrackTime',
+        title: '最后跟踪操作时间',
+        width: 160,
+        ellipsis: true,
+    },
+    {
+        dataIndex: 'lastTrackMessage',
+        title: '最后跟踪信息',
+        width: 300,
+        ellipsis: true,
     },
     {
         dataIndex: 'collectedTime',

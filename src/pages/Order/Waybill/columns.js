@@ -71,11 +71,6 @@ export default [
     width: 90,
   },
   {
-    dataIndex: 'requestedProductName',
-    title: '选择产品',
-    width: 100,
-  },
-  {
     dataIndex: 'itemDescription',
     title: '货物描述',
     width: 120,
@@ -86,6 +81,11 @@ export default [
     title: '送货方式',
     width: 100,
     render: DeliveryTypeRender,
+  },
+  {
+    dataIndex: 'requestedProductName',
+    title: '选择产品',
+    width: 100,
   },
   {
     dataIndex: 'transportationAmount',
