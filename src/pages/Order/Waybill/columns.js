@@ -1,8 +1,9 @@
 import {
   OrderTypeRender,
-  ScheduleStatusRender,
+  TransportationTypeRender,
   TransportStatusRender,
-  ClientRender
+  ClientRender,
+  DeliveryTypeRender,
 } from 'components/form';
 
 export default [
@@ -20,6 +21,13 @@ export default [
     fixed: 'left',
   },
   {
+    dataIndex: 'transportationType',
+    title: '运输类型',
+    width: 100,
+    fixed: 'left',
+    render: TransportationTypeRender,
+  },
+  {
     dataIndex: 'waybillNumber',
     title: '运单号',
     width: 120,
@@ -28,7 +36,7 @@ export default [
   {
     dataIndex: 'originNumber',
     title: '来源单号',
-    width: 150,
+    width: 120,
     ellipsis: true,
   },
   {
@@ -38,10 +46,9 @@ export default [
     render: TransportStatusRender,
   },
   {
-    dataIndex: 'orderType',
-    title: '订单类型',
-    width: 100,
-    render: OrderTypeRender,
+    dataIndex: 'packageQty',
+    title: '包裹件数',
+    width: 90,
   },
   {
     dataIndex: 'itemQty',
@@ -54,10 +61,36 @@ export default [
     width: 90,
   },
   {
+    dataIndex: 'requireInsurance',
+    title: '购买保险',
+    width: 90,
+  },
+  {
+    dataIndex: 'cargoValue',
+    title: '货物价值',
+    width: 90,
+  },
+  {
+    dataIndex: 'requestedProductName',
+    title: '选择产品',
+    width: 100,
+  },
+  {
+    dataIndex: 'totalAmount',
+    title: '预估运费',
+    width: 90,
+  },
+  {
     dataIndex: 'itemDescription',
     title: '货物描述',
     width: 120,
     ellipsis: true,
+  },
+  {
+    dataIndex: 'deliveryType',
+    title: '送货方式',
+    width: 100,
+    render: DeliveryTypeRender,
   },
   {
     dataIndex: 'fromStoreName',
@@ -154,7 +187,7 @@ export default [
   },
   {
     dataIndex: 'remark',
-    title: '备注',
+    title: '发货备注',
     width: 300,
     ellipsis: true,
   },

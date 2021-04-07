@@ -15,8 +15,8 @@ export default [
         fixed: true,
     },
     {
-        dataIndex: 'productName',
-        title: '物流产品',
+        dataIndex: 'consignProductName',
+        title: '发运产品',
         width: 120,
         fixed: true,
     },
