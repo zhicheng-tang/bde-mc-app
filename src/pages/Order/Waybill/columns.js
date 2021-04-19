@@ -8,11 +8,10 @@ import {
 
 export default [
   {
-    dataIndex: 'clientId',
+    dataIndex: 'clientName',
     title: '客户',
     width: 100,
     fixed: 'left',
-    render: ClientRender,
   },
   {
     dataIndex: 'orderDate',
