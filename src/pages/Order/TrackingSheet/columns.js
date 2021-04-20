@@ -5,6 +5,7 @@ import {
     TransportationTypeRender,
     TransportStatusRender,
 } from '../../../components/form';
+import React from "react";
 
 export default [
     {
@@ -65,6 +66,11 @@ export default [
         dataIndex: 'requireInsurance',
         title: '购买保险',
         width: 90,
+        render: (text) => (
+            <a>
+                {text?'是':'否'}
+            </a>
+        ),
     },
     {
         dataIndex: 'cargoValue',

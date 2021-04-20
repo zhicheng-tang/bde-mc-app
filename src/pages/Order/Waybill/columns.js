@@ -5,6 +5,8 @@ import {
   ClientRender,
   DeliveryTypeRender,
 } from 'components/form';
+import {showDetail} from "./actions";
+import React from "react";
 
 export default [
   {
@@ -63,6 +65,11 @@ export default [
     dataIndex: 'requireInsurance',
     title: '购买保险',
     width: 90,
+    render: (text) => (
+        <a>
+         {text?'是':'否'}
+        </a>
+    ),
   },
   {
     dataIndex: 'cargoValue',
