@@ -20,9 +20,10 @@ function showError(error) {
 export function fetchData() {
     return async (dispatch, getState) => {
         const query = getQuery(getState());
-        // console.log(query);
         dispatch(setState({isFetching: true}));
         try {
+            const {data:productArr} = await axios.post('/api/logistics/product/getAll');
+            const {data:userArr} = await axios.post('/api/client/getAll');
             const {
                 data: {totalElements, content},
             } = await axios.post('/api/waybill/query', query);
@@ -32,6 +33,8 @@ export function fetchData() {
                     items: content,
                     isFetching: false,
                     selectedKeys: [],
+                    userArr,
+                    productArr,
                 })
             );
         } catch (ex) {

@@ -19,6 +19,8 @@ const initialState = {
   detailId: null,
   detailModalVisible: false,
   importModalVisible: false,
+  userArr:[],
+  productArr:[],
 };
 
 export default function reducer(state = initialState, action) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Select, Tag} from 'antd';
-
+import {useDispatch, useSelector} from 'react-redux';
 const {Option} = Select;
 
 const clientOptions = [
@@ -67,11 +67,12 @@ const clientOptions = [
 ];
 
 export function ClientSelector(props) {
+    const userArr = useSelector((state) => state.userArr)||[];
     return (
         <Select allowClear={true} {...props}>
-            {clientOptions.map((item) => (
-                <Option key={item.value} value={item.value}>
-                    {item.title}
+            {userArr.length>0&&userArr.map((item) => (
+                <Option key={item.clientId} value={item.clientId}>
+                    {item.name}
                 </Option>
             ))}
         </Select>
@@ -79,7 +80,8 @@ export function ClientSelector(props) {
 }
 
 export function ClientRender(value) {
-    const item = clientOptions.find((item) => item.value === value) || {};
-    const {title, color} = item;
-    return <Tag color={color}>{title}</Tag>;
+    const userArr = useSelector((state) => state.userArr)||[];
+    const item = userArr.find((item) => item.clientId === value) || {};
+    const {name, color} = item;
+    return <Tag color={color}>{name}</Tag>;
 }

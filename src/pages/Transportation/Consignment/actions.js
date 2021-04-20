@@ -27,6 +27,7 @@ export function fetchData() {
         const query = getQuery(getState());
         dispatch(setState({isFetching: true}));
         try {
+            const {data:productArr} = await axios.post('/api/logistics/product/getAll');
             const {
                 data: {totalElements, content},
             } = await axios.post('/api/consignment/query', query);
@@ -36,6 +37,7 @@ export function fetchData() {
                     items: content,
                     isFetching: false,
                     selectedKeys: [],
+                    productArr,
                 })
             );
         } catch (ex) {

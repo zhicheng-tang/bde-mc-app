@@ -1,6 +1,6 @@
 import { Select } from 'antd';
 import React from 'react';
-
+import { useSelector, useDispatch } from 'react-redux';
 const { Option } = Select;
 
 const carrierOptions = [
@@ -47,19 +47,18 @@ const carrierOptions = [
     isSupportOnline: false,
   }
 ];
-
 export function CarrierSelector({ isOnlineMode, ...props }) {
-  const carriers = isOnlineMode
-    ? carrierOptions.filter((item) => item.isSupportOnline)
-    : carrierOptions;
+  const productArr = useSelector((state) => state.productArr);
+  const carriers = isOnlineMode ? productArr.filter((item) => item.supportMultiPackage)
+    : productArr;
   return (
-    <Select allowClear={true} {...props}>
-      {carriers.map((item) => (
-        <Option key={item.value} value={item.value}>
-          {item.title}
-        </Option>
-      ))}
-    </Select>
+      <Select allowClear={true} {...props}>
+        {carriers.map((item) => (
+            <Option key={item.productId} value={item.productId}>
+              {item.productName}
+            </Option>
+        ))}
+      </Select>
   );
 }
 
@@ -68,7 +67,8 @@ CarrierSelector.defaultProps = {
 };
 
 export function CarrierRender(value) {
-  const item = carrierOptions.find((item) => item.value === value) || {};
+  const productArr = useSelector((state) => state.productArr)||[];
+  const item = carrierOptions.find((item) => item.value === value) || '';
   const { title } = item;
   return title;
 }

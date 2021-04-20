@@ -26,7 +26,10 @@ function SearchBar() {
             initialValues={filter}
             size="small"
             onFinish={onFinish}>
-            <Form.Item {...formItemColProps} name="carrierId" label="承运商">
+            {/*<Form.Item {...formItemColProps} name="carrierId" label="承运商">*/}
+            {/*    <CarrierSelector/>*/}
+            {/*</Form.Item>*/}
+            <Form.Item {...formItemColProps} name="carrierId" label="发运产品">
                 <CarrierSelector/>
             </Form.Item>
             <Form.Item  name="consignmentNumber" label="托运单号">

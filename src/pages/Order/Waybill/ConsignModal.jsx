@@ -50,12 +50,23 @@ function ConsignModal() {
   const model = useSelector(getConsignModel);
 
   const [form] = Form.useForm();
-
+  const productArr = useSelector((state) => state.productArr);
   const handleConsigning = ({ carrierId }) => {
+    let params;
+    productArr.map(v=>{
+      if (carrierId==v.productId){
+        params = {
+          logisticsId:v.logisticsId,
+          productId:carrierId
+        }
+      }
+    })
+    params.waybillNumbers =  model.valid.map((item) => item.waybillNumber);
     dispatch(
       consignExpress({
-        carrierId,
-        waybillNumbers: model.valid.map((item) => item.waybillNumber),
+        ...params
+        // carrierId,
+        // waybillNumbers: model.valid.map((item) => item.waybillNumber),
       })
     );
   };
@@ -76,7 +87,7 @@ function ConsignModal() {
           <Form.Item
             {...formItemColProps}
             name="carrierId"
-            label="承运商"
+            label="承运商产品"
             rules={[
               {
                 required: true,

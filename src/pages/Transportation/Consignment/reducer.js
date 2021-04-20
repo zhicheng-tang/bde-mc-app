@@ -18,6 +18,7 @@ const initialState = {
   isCanceling: false,
   importModalVisible: false,
   isImporting: false,
+  productArr:[],
 };
 
 export default function reducer(state = initialState, action) {
