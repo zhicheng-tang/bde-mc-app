@@ -8,6 +8,7 @@ import {
     DistrictSelector,
     OrderTypeSelector,
     TransportStatusSelector,
+    TransportationTypeSelector,
     TypedInput,
 } from '../../../components/form';
 import {fetchData, setState} from './actions';
@@ -52,8 +53,8 @@ function SearchBar() {
             <Form.Item {...formItemColProps} name="clientId" label="客户">
                 <ClientSelector/>
             </Form.Item>
-            <Form.Item {...formItemColProps} name="orderType" label="订单类型">
-                <OrderTypeSelector/>
+            <Form.Item {...formItemColProps} name="transportationType" label="运输类型">
+                <TransportationTypeSelector/>
             </Form.Item>
             <Form.Item {...formItemColProps} name="fromDistrictCode" label="发货地">
                 <DistrictSelector/>

@@ -1,18 +1,30 @@
-import {CarrierRender, ClientRender, OrderTypeRender, TransportStatusRender,} from '../../../components/form';
+import {
+    CarrierRender,
+    ClientRender,
+    DeliveryTypeRender,
+    TransportationTypeRender,
+    TransportStatusRender,
+} from '../../../components/form';
 
 export default [
     {
-        dataIndex: 'clientId',
+        dataIndex: 'clientName',
         title: '客户',
         width: 100,
         fixed: 'left',
-        render: ClientRender,
     },
     {
         dataIndex: 'orderDate',
         title: '订单日期',
         width: 160,
         fixed: 'left',
+    },
+    {
+        dataIndex: 'transportationType',
+        title: '运输类型',
+        width: 100,
+        fixed: 'left',
+        render: TransportationTypeRender,
     },
     {
         dataIndex: 'waybillNumber',
@@ -23,7 +35,7 @@ export default [
     {
         dataIndex: 'originNumber',
         title: '来源单号',
-        width: 180,
+        width: 120,
         ellipsis: true,
     },
     {
@@ -33,21 +45,68 @@ export default [
         render: TransportStatusRender,
     },
     {
-        dataIndex: 'orderType',
-        title: '订单类型',
-        width: 100,
-        render: OrderTypeRender,
+        dataIndex: 'packageQty',
+        title: '包裹件数',
+        width: 90,
     },
     {
-        dataIndex: 'carrierId',
-        title: '承运商',
-        width: 100,
-        render: CarrierRender,
+        dataIndex: 'itemQty',
+        title: '商品数量',
+        width: 90,
+        ellipsis: true,
     },
     {
-        dataIndex: 'consignmentNumber',
-        title: '托运单号',
-        width: 150,
+        dataIndex: 'weight',
+        title: '重量',
+        width: 90,
+        ellipsis: true,
+    },
+    {
+        dataIndex: 'requireInsurance',
+        title: '购买保险',
+        width: 90,
+    },
+    {
+        dataIndex: 'cargoValue',
+        title: '货物价值',
+        width: 90,
+    },
+    {
+        dataIndex: 'itemDescription',
+        title: '货物描述',
+        width: 120,
+        ellipsis: true,
+    },
+    {
+        dataIndex: 'deliveryType',
+        title: '送货方式',
+        width: 100,
+        render: DeliveryTypeRender,
+    },
+    {
+        dataIndex: 'requestedProductName',
+        title: '选择产品',
+        width: 100,
+    },
+    {
+        dataIndex: 'transportationAmount',
+        title: '预估运费',
+        width: 90,
+    },
+    {
+        dataIndex: 'insuranceAmount',
+        title: '预估保险费',
+        width: 90,
+    },
+    {
+        dataIndex: 'toUpstairsAmount',
+        title: '预估上楼费',
+        width: 90,
+    },
+    {
+        dataIndex: 'totalAmount',
+        title: '预估总运费',
+        width: 90,
     },
     {
         dataIndex: 'fromStoreName',
@@ -132,36 +191,22 @@ export default [
         width: 120,
     },
     {
-        dataIndex: 'itemQty',
-        title: '商品数量',
-        width: 90,
-        ellipsis: true,
+        dataIndex: 'consignProductName',
+        title: '发运产品',
+        width: 100,
     },
     {
-        dataIndex: 'packageWeight',
-        title: '重量',
-        width: 90,
-        ellipsis: true,
+        dataIndex: 'consignmentNumber',
+        title: '托运单号',
+        width: 150,
     },
     {
-        dataIndex: 'itemDescription',
-        title: '货物描述',
-        width: 120,
-        ellipsis: true,
-    },
-    {
-        dataIndex: 'createdBy',
-        title: '创建人',
-        width: 120,
-    },
-    {
-        dataIndex: 'createdTime',
-        title: '创建时间',
+        dataIndex: 'consignTime',
+        title: '发运时间',
         width: 160,
-        sorter: true,
     },
     {
-        dataIndex: 'lastTrackOperationTime',
+        dataIndex: 'lastTrackTime',
         title: '最后跟踪操作时间',
         width: 160,
         ellipsis: true,
@@ -178,7 +223,7 @@ export default [
         width: 160,
     },
     {
-        dataIndex: 'packageQty',
+        dataIndex: 'collectedPackageQty',
         title: '揽收件数',
         width: 90,
     },
@@ -213,8 +258,19 @@ export default [
         ellipsis: true,
     },
     {
+        dataIndex: 'createdBy',
+        title: '创建人',
+        width: 120,
+    },
+    {
+        dataIndex: 'createdTime',
+        title: '创建时间',
+        width: 160,
+        sorter: true,
+    },
+    {
         dataIndex: 'remark',
-        title: '备注',
+        title: '发货备注',
         width: 300,
         ellipsis: true,
     },
