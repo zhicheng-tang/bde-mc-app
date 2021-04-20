@@ -59,7 +59,7 @@ export function exportData() {
     try {
       const {
         data: { content = [] },
-      } = await axios.post('/api/waybill/tracking/export', {
+      } = await axios.post('/api/waybill/tracking/query', {
         ...query,
         page: 1,
         pageSize: 20000,
